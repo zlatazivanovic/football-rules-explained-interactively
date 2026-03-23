@@ -2,7 +2,7 @@
 
 Learn **Football Rules Explained Interactively** with this Python app. This interactive app helps you understand football rules clearly, covering throw-ins, red cards, extra time, and more.
 
-This app is perfect for beginners or football enthusiasts who want to learn football rules interactively. Explore key scenarios, understand match regulations, and answer common questions about throw-ins, red cards, added time, and goalkeeper rules.
+This app is perfect for beginners or football enthusiasts who want to learn football rules interactively. Explore key scenarios, understand match regulations, and answer common questions about throw-ins, red cards, added time, and goalkeeper rules. 
 
 ## Frequently Asked Questions
 
