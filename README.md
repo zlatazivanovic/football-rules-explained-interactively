@@ -24,9 +24,4 @@ This app is perfect for beginners or football enthusiasts who want to learn foot
 ## Why This App
 
 This interactive Python app makes learning football rules easy and fun. By selecting different match scenarios, users can see clear explanations of rules, helping beginners, students, and fans understand football better.
-- **Can a match end without kickoff?**  
-  No, a proper kickoff is required to start the match.
 
-## Why This App
-
-This interactive Python app makes learning football rules easy and fun. By selecting different match scenarios, users can see clear explanations of rules, helping beginners, students, and fans understand football better.
