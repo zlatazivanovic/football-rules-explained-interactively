@@ -1,10 +1,7 @@
 rules = {
     "throw_in_goal": {
         "question": "Can a goal be scored directly from a throw-in?",
-        "answer": ""throw_in_goal": {
-    "question": "Can a goal be scored directly from a throw-in?",
-    "answer": "No. If the ball enters the opponent's goal directly, a goal kick is awarded. If it enters the thrower's own goal directly, a corner kick is awarded. The ball must touch another player first for a goal to be scored."
-}"
+        "answer": "No. If the ball enters the opponent's goal directly, a goal kick is awarded. If it enters the thrower's own goal directly, a corner kick is awarded. The ball must touch another player first for a goal to be scored."
     },
     "red_card": {
         "question": "What happens if a player gets a red card?",
