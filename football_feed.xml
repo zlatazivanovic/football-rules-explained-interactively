@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Interactive Football Resources</title>
+  <link>https://archive.org/details/rr_20260326</link>
+  <description>A collection of interactive football rules resources including PDF, article, Pinterest post, and GitHub repository.</description>
+
+  <!-- PDF Item -->
+  <item>
+    <title>Football Rules Explained Interactively (PDF)</title>
+    <link>https://archive.org/details/rr_20260326</link>
+    <description>This PDF guide helps you understand football rules clearly, covering throw-ins, red cards, extra time, and more. Perfect for beginners and football enthusiasts.</description>
+    <pubDate>Wed, 26 Mar 2026 08:00:00 +0000</pubDate>
+    <guid>https://archive.org/details/rr_20260326</guid>
+  </item>
+
+  <!-- Medium Article Item -->
+  <item>
+    <title>How to Learn Football Rules Interactively (Medium Article)</title>
+    <link>https://medium.com/@zlata_zivanovic/how-to-learn-football-rules-interactively-with-this-open-source-project-6a28d740b22c</link>
+    <description>This article explains football rules interactively and links to the full PDF guide. Perfect for beginners who want to learn the rules step by step.</description>
+    <pubDate>Thu, 24 Mar 2026 09:30:00 +0000</pubDate>
+    <guid>https://medium.com/@zlata_zivanovic/how-to-learn-football-rules-interactively-with-this-open-source-project-6a28d740b22c</guid>
+  </item>
+
+  <!-- Pinterest Item -->
+  <item>
+    <title>Football Rules Visual Guide (Pinterest)</title>
+    <link>https://www.pinterest.com/pin/496592296437091149/</link>
+    <description>A visual representation of football rules pinned on Pinterest. Great for quick reference and interactive learning.</description>
+    <pubDate>Fri, 24 Mar 2026 10:15:00 +0000</pubDate>
+    <guid>https://www.pinterest.com/pin/496592296437091149/</guid>
+  </item>
+
+  <!-- GitHub Repo Item -->
+  <item>
+    <title>Interactive Football Rules Project (GitHub)</title>
+    <link>https://github.com/zlatazivanovic/football-rules-explained-interactively</link>
+    <description>Open-source GitHub repository for the interactive football rules project. Includes the PDF guide, code, and instructions for learning football rules interactively.</description>
+    <pubDate>Sat, 23 Mar 2026 11:45:00 +0000</pubDate>
+    <guid>https://github.com/zlatazivanovic/football-rules-explained-interactively</guid>
+  </item>
+
+</channel>
+</rss>
