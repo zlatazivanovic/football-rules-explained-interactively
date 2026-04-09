@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Set Pieces Explained: Throw-ins, Corner Kicks, Penalties & More</title>
+  <meta name="description" content="Complete guide to football set pieces. Learn the rules for throw-ins, corner kicks, penalty kicks, goal kicks, and free kicks — including edge cases most fans get wrong.">
+  <meta name="keywords" content="football set pieces, throw-in rules football, corner kick rules, penalty kick rules, goal kick football, free kick rules, football restart rules">
+  <link rel="canonical" href="https://football-rules-explained.web.app/football-set-pieces-explained.html">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pitch: #1a472a;
+      --pitch-mid: #2d6a42;
+      --accent: #f0c040;
+      --accent-soft: #fdf3d0;
+      --paper: #faf8f4;
+      --ink: #1c1c1a;
+      --muted: #6b6860;
+      --border: #e2ddd6;
+      --white: #ffffff;
+      --blue: #2980b9;
+      --blue-soft: #eaf4fb;
+    }
+    body { font-family: 'Lora', serif; background: var(--paper); color: var(--ink); line-height: 1.7; }
+
+        nav { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; overflow-x: auto; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 0; min-width: max-content; }
+    nav ul li a { display: block; padding: 0.85rem 1.2rem; color: #333; text-decoration: none; font-size: 0.9rem; font-weight: 600; border-bottom: 3px solid transparent; transition: border-color 0.2s, color 0.2s; white-space: nowrap; }
+    nav ul li a:hover { color: var(--pitch-mid); border-bottom-color: var(--pitch-mid); }
+    nav ul li a.nav-cluster { color: var(--pitch); border-left: 1px solid var(--border); }
+    nav ul li a.nav-cluster:hover { background: #f0f7f2; border-bottom-color: var(--pitch-mid); }
+    nav ul li a.nav-active { color: var(--pitch); border-bottom-color: var(--pitch); font-weight: 700; }
+    .nav-divider { display: flex; align-items: center; padding: 0 0.5rem; color: #ccc; font-size: 1rem; pointer-events: none; }
+
+    .hero {
+      background: var(--pitch-mid);
+      padding: 4rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 70% 50%, rgba(255,255,255,0.04) 0%, transparent 60%);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 40px;
+      background: var(--paper);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+    .breadcrumb { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+    .breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .topic-tag { display: inline-block; background: var(--accent); color: var(--pitch); font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 3px 12px; border-radius: 2px; margin-bottom: 1rem; }
+    h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 700; color: var(--white); line-height: 1.05; letter-spacing: 1px; margin-bottom: 1rem; }
+    .hero-sub { color: rgba(255,255,255,0.65); font-size: 1rem; font-style: italic; max-width: 560px; }
+
+    .main { max-width: 780px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+
+    .quick-answer { background: var(--accent-soft); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1.4rem 1.6rem; margin-bottom: 2.8rem; }
+    .quick-answer strong { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--pitch-mid); display: block; margin-bottom: 0.5rem; }
+
+    h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; font-weight: 700; letter-spacing: 1px; color: var(--ink); margin: 2.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 2px solid var(--border); }
+    h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.5px; color: var(--pitch-mid); margin: 1.8rem 0 0.5rem; }
+    p { margin-bottom: 1rem; font-size: 1rem; }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; font-size: 0.97rem; }
+
+    /* SET PIECE NAVIGATOR */
+    .set-piece-nav { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .sp-pill {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      color: var(--muted);
+      text-decoration: none;
+      transition: all .2s;
+    }
+    .sp-pill:hover { border-color: var(--pitch-mid); color: var(--pitch-mid); background: #f0f7f2; }
+
+    /* RULE BLOCK */
+    .rule-block {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 1.8rem 0;
+    }
+    .rule-block-header {
+      background: var(--pitch);
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .rule-block-header h3 {
+      color: var(--white);
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+    .rule-block-body { padding: 1.4rem 1.6rem; }
+    .rule-block-body p:last-child { margin-bottom: 0; }
+
+    /* EDGE CASE CALLOUTS */
+    .edge-case {
+      background: var(--blue-soft);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 6px 6px 0;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+    }
+    .edge-case strong { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); display: block; margin-bottom: 0.3rem; }
+
+    /* COMPARISON TABLE */
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.88rem; }
+    .comparison-table th { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; background: var(--pitch); color: var(--white); padding: 10px 14px; text-align: left; font-weight: 600; }
+    .comparison-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+    .yes { color: #27ae60; font-weight: 600; }
+    .no { color: #e74c3c; font-weight: 600; }
+
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.2rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-q::after { content: '+'; font-size: 1.3rem; color: var(--pitch-mid); flex-shrink: 0; transition: transform .2s; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { display: none; padding-top: 0.8rem; font-size: 0.95rem; color: var(--muted); }
+    .faq-item.open .faq-a { display: block; }
+
+    .cta-box { background: var(--pitch); border-radius: 12px; padding: 2.4rem; text-align: center; margin: 3rem 0; }
+    .cta-box h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; color: var(--white); margin-bottom: 0.6rem; margin-top: 0; }
+    .cta-box p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 1.4rem; font-style: italic; }
+    .cta-btn { display: inline-block; background: var(--accent); color: var(--pitch); font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: opacity .2s, transform .2s; }
+    .cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+    .cta-btn-ghost { display: inline-block; border: 1.5px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; margin-left: 1rem; transition: border-color .2s, color .2s; }
+    .cta-btn-ghost:hover { border-color: rgba(255,255,255,0.7); color: var(--white); }
+
+    .related { margin-top: 3rem; }
+    .related h2 { font-size: 1.3rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .related-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 8px; padding: 1.2rem 1.4rem; text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; display: block; }
+    .related-card:hover { border-color: var(--pitch-mid); transform: translateY(-3px); }
+    .related-card-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--pitch-mid); margin-bottom: 0.4rem; }
+    .related-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; color: var(--ink); margin-bottom: 0.3rem; }
+    .related-card p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+
+        footer { background: #1a1a2e; color: #ccc; padding: 2rem 1rem; text-align: center; font-size: 0.88rem; }
+    footer a { color: #8bc34a; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+
+<nav aria-label="Page sections">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="nav-divider">|</li>
+    <li><a href="offside-rule-explained.html" class="nav-cluster">Offside Rule</a></li>
+    <li><a href="cards-and-fouls-in-football.html" class="nav-cluster">Cards &amp; Fouls</a></li>
+    <li><a href="football-set-pieces-explained.html" class="nav-cluster nav-active">Set Pieces</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Set Pieces</div>
+    <div class="topic-tag">Set Pieces</div>
+    <h1>Football Set Pieces Explained: Throw-ins, Corners, Penalties & More</h1>
+    <p class="hero-sub">The rules for every restart in football — including the edge cases that even experienced fans argue about.</p>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="quick-answer">
+    <strong>What is a set piece?</strong>
+    <p>A set piece is any restart of play after the ball has gone out of play or a foul has been committed — throw-ins, corner kicks, goal kicks, free kicks, and penalty kicks. Each restart has specific rules about where the ball is placed, who can take it, and when play resumes.</p>
+  </div>
+
+  <nav aria-label="Jump to section">
+    <div class="set-piece-nav">
+      <a href="#throw-in" class="sp-pill">Throw-in</a>
+      <a href="#corner-kick" class="sp-pill">Corner Kick</a>
+      <a href="#goal-kick" class="sp-pill">Goal Kick</a>
+      <a href="#penalty-kick" class="sp-pill">Penalty Kick</a>
+      <a href="#free-kick" class="sp-pill">Free Kicks</a>
+    </div>
+  </nav>
+
+  <h2 id="throw-in">Throw-In Rules</h2>
+  <p>A throw-in is awarded when the ball crosses the touchline (the long sides of the pitch) in full. The throw is taken by the team that did <em>not</em> touch the ball last before it went out.</p>
+
+  <div class="rule-block">
+    <div class="rule-block-header"><h3>Throw-in requirements</h3></div>
+    <div class="rule-block-body">
+      <ul>
+        <li>Both feet must remain on or behind the touchline at the moment of delivery</li>
+        <li>The ball must be thrown with both hands from behind and over the head</li>
+        <li>The thrower must face the field of play</li>
+        <li>The ball must be thrown from the point where it crossed the line</li>
+        <li>Opponents must stand at least 2 metres from the thrower</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Can You Score Directly From a Throw-In?</h3>
+  <p>No — a goal cannot be scored directly from a throw-in. If the ball is thrown directly into the <strong>opponent's goal</strong>, a goal kick is awarded to the opposing team. If it enters the <strong>thrower's own goal</strong>, a corner kick is awarded to the opponents. The ball must touch at least one other player before entering either goal.</p>
+
+  <div class="edge-case">
+    <strong>Edge Case</strong>
+    This means a defender cannot accidentally score an own goal from a throw-in. The referee will stop play and award a corner kick instead.
+  </div>
+
+  <h3>Can the Goalkeeper Pick Up a Throw-in From a Teammate?</h3>
+  <p>Yes. The goalkeeper <em>can</em> pick up (handle) a throw-in played to them by a teammate. The restriction that prevents goalkeepers from handling back-passes applies only to deliberate kicks — not throw-ins, headers, or chest-downs from teammates. This is a frequently misunderstood distinction.</p>
+
+  <h2 id="corner-kick">Corner Kick Rules</h2>
+  <p>A corner kick is awarded when the ball crosses the goal line (the short sides of the pitch, excluding the goal itself) and was last touched by a <strong>defending player</strong>. The attacking team restarts from the nearest corner arc.</p>
+
+  <div class="rule-block">
+    <div class="rule-block-header"><h3>Corner kick requirements</h3></div>
+    <div class="rule-block-body">
+      <ul>
+        <li>The ball is placed inside the corner arc (1-metre radius quarter-circle)</li>
+        <li>The corner flag post must not be removed</li>
+        <li>Opponents must be at least 9.15 metres (10 yards) from the ball until it is in play</li>
+        <li>The kicker cannot touch the ball again until another player has touched it</li>
+        <li>A goal may be scored directly from a corner kick</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Can You Score Directly From a Corner?</h3>
+  <p>Yes — a goal scored directly from a corner kick counts. This is called an "olimpico" goal (named after Cesáreo Onzari, who first scored one in 1924). If the ball swings directly into the net from the corner flag without any other player touching it, the goal stands.</p>
+  <p>However, if the ball enters the <strong>kicker's own goal</strong> directly, the attacking team is instead awarded a corner kick from the other end. A corner cannot result in an own goal directly.</p>
+
+  <div class="edge-case">
+    <strong>Offside & Corner Kicks</strong>
+    You cannot be offside directly from a corner kick. A player can stand in any position — including ahead of the last defender — to receive the ball from a corner without being penalised for offside.
+  </div>
+
+  <h2 id="goal-kick">Goal Kick Rules</h2>
+  <p>A goal kick is awarded when the ball crosses the goal line last touched by an <strong>attacking player</strong>. The defending team restarts from anywhere inside their own goal area.</p>
+  <p>Since the 2019 rule change, players no longer need to wait for the ball to leave the penalty area before touching it — teammates can receive a goal kick inside the penalty area. Opponents must remain outside the penalty area until the ball is in play (once it is clearly kicked and moves).</p>
+
+  <div class="edge-case">
+    <strong>Can a goalkeeper score from a goal kick?</strong>
+    Yes, a goal can be scored directly from a goal kick. If the ball travels the full length of the pitch and enters the opponent's goal without being touched, it counts. It is rare, but it has happened.
+  </div>
+
+  <h2 id="penalty-kick">Penalty Kick Rules</h2>
+  <p>A penalty kick is awarded when a player commits a direct free kick offence inside their <strong>own penalty area</strong>. The kick is taken from the penalty spot, 11 metres from the goal.</p>
+
+  <div class="rule-block">
+    <div class="rule-block-header"><h3>Penalty kick procedure</h3></div>
+    <div class="rule-block-body">
+      <ul>
+        <li>Only the designated kicker and the goalkeeper are inside or on the edge of the penalty area</li>
+        <li>The goalkeeper must stay on their goal line (between the posts) until the ball is kicked</li>
+        <li>All other players must be outside the penalty area and the arc, and behind the penalty spot</li>
+        <li>The kicker must move forward — they cannot feint to confuse the goalkeeper after beginning their run-up</li>
+        <li>If the ball rebounds from the post or crossbar, the kicker cannot touch it again before another player does</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Penalty Shootouts vs In-Match Penalties</h3>
+  <p>An <em>in-match penalty</em> is a direct attempt on goal — if the ball rebounds, play continues. A <em>penalty shootout</em> (used to decide knockout matches after a draw) operates under different rules: the kick is over once the ball stops moving, is saved, or goes out of play. In a shootout, no follow-up is allowed.</p>
+
+  <h2 id="free-kick">Free Kick Rules</h2>
+  <p>Free kicks come in two types: <strong>direct</strong> and <strong>indirect</strong>.</p>
+  <p>A <strong>direct free kick</strong> can be scored directly — the ball can go straight into the goal without touching another player. Direct free kicks are awarded for physical fouls (kicking, tripping, pushing, striking, handball).</p>
+  <p>An <strong>indirect free kick</strong> must touch at least one other player before entering the goal. The referee signals an indirect free kick by holding one arm raised until the second player touches the ball. Indirect free kicks are awarded for technical infringements — offside, dangerous play, impeding an opponent without contact, or goalkeeper infractions.</p>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Restart</th>
+        <th>Goal directly?</th>
+        <th>Offside applies?</th>
+        <th>GK can handle?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Throw-in</td>
+        <td class="no">No</td>
+        <td class="no">No</td>
+        <td class="yes">Yes</td>
+      </tr>
+      <tr>
+        <td>Corner kick</td>
+        <td class="yes">Yes</td>
+        <td class="no">No</td>
+        <td class="yes">Yes</td>
+      </tr>
+      <tr>
+        <td>Goal kick</td>
+        <td class="yes">Yes</td>
+        <td class="no">No*</td>
+        <td class="yes">Yes</td>
+      </tr>
+      <tr>
+        <td>Direct free kick</td>
+        <td class="yes">Yes</td>
+        <td class="yes">Yes</td>
+        <td class="no">No (from teammate)</td>
+      </tr>
+      <tr>
+        <td>Indirect free kick</td>
+        <td class="no">No</td>
+        <td class="yes">Yes</td>
+        <td class="no">No (from teammate)</td>
+      </tr>
+      <tr>
+        <td>Penalty kick</td>
+        <td class="yes">Yes</td>
+        <td>N/A</td>
+        <td class="yes">Yes (as defender)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:.82rem; color:var(--muted);">* Offside cannot be called directly from a goal kick, but applies once the ball has been touched by another player.</p>
+
+  <div class="cta-box">
+    <h3>Test Your Set Piece Knowledge</h3>
+    <p>Our interactive app walks you through throw-in, corner kick, and penalty scenarios — what's the correct restart?</p>
+    <a href="https://github.com/zlatazivanovic/football-rules-explained-interactively" class="cta-btn" target="_blank" rel="noopener">Try the Interactive App</a>
+    <a href="index.html" class="cta-btn-ghost">Back to All Rules</a>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens if a player takes a throw-in incorrectly?</div>
+    <div class="faq-a">The referee awards a throw-in to the opposing team. Common violations include lifting a foot off the ground, not using both hands, or not throwing from behind and over the head. Referees often give a warning on the first offence before awarding possession to the opposition.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can a player score from a free kick inside their own half?</div>
+    <div class="faq-a">Yes. A direct free kick from any position on the pitch can technically score a goal if the ball travels the full length into the opponent's net. It is extremely rare but not against the rules. An indirect free kick from the same position would require another player to touch it first.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can the goalkeeper score from a throw?</div>
+    <div class="faq-a">No. A goal cannot be scored directly from a goalkeeper's throw. If the ball is thrown and enters the opponent's goal without touching another player, a goal kick is awarded. The ball must touch at least one other player before a goalkeeper throw can result in a goal.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if the penalty taker's run-up is interrupted?</div>
+    <div class="faq-a">A player is allowed to feint during the run-up to the ball — this is permitted to deceive the goalkeeper. However, once the kicker has completed their run-up and begins the kicking motion, they cannot stop or feint. If they do, the referee awards an indirect free kick to the defending team for the infringement.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How far must defenders stand from a free kick?</div>
+    <div class="faq-a">Defending players must be at least 9.15 metres (10 yards) from the ball for any free kick. For a free kick inside the attacking team's own half, the ball can be played quickly without waiting for opponents to retreat — provided the referee has not required the kick to wait. For free kicks near the penalty area, the referee typically manages the wall before allowing play to restart.</div>
+  </div>
+
+  <nav class="related" aria-label="Related pages">
+    <h2>Continue Learning</h2>
+    <div class="related-grid">
+      <a href="offside-rule-explained.html" class="related-card">
+        <div class="related-card-tag">Offside</div>
+        <h4>The Offside Rule Explained</h4>
+        <p>Position, active involvement, and the VAR debate.</p>
+      </a>
+      <a href="cards-and-fouls-in-football.html" class="related-card">
+        <div class="related-card-tag">Cards & Fouls</div>
+        <h4>Yellow Cards, Red Cards & Handball</h4>
+        <p>When does a foul become a card? What counts as handball?</p>
+      </a>
+      <a href="index.html" class="related-card">
+        <div class="related-card-tag">Pillar Page</div>
+        <h4>Football Rules Explained Interactively</h4>
+        <p>The complete hub — PDF guide, GitHub repo, and all resources.</p>
+      </a>
+    </div>
+  </nav>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="https://archive.org/details/rr_20260326" target="_blank" rel="noopener">PDF Guide</a>
+    <a href="https://medium.com/@zlata_zivanovic/how-to-learn-football-rules-interactively-with-this-open-source-project-6a28d740b22c" target="_blank" rel="noopener">Medium Article</a>
+    <a href="https://github.com/zlatazivanovic/football-rules-explained-interactively" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.theifab.com/laws-of-the-game/" target="_blank" rel="noopener noreferrer">IFAB Official Laws</a>
+    <a href="offside-rule-explained.html">Offside Rule</a>
+    <a href="cards-and-fouls-in-football.html">Cards &amp; Fouls</a>
+    <a href="football-set-pieces-explained.html">Set Pieces</a>
+    <a href="sitemap.xml">Sitemap</a>
+  </div>
+  <p>&copy; 2026 Interactive Football Resources by <a href="https://medium.com/@zlata_zivanovic" target="_blank" rel="noopener">Zlata Zivanovic</a>. Content based on IFAB Laws of the Game. For educational purposes.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  });
+</script>
+</body>
+</html>
