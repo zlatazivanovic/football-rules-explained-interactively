@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yellow Cards, Red Cards & Handball Fouls in Football – Rules Explained</title>
+  <meta name="description" content="Complete guide to football cards and fouls. Learn what earns a yellow card, red card, handball foul, and when a penalty kick is awarded. Clear explanations with examples.">
+  <meta name="keywords" content="yellow card football, red card rules football, handball foul football, penalty kick rules, football fouls explained, what is a red card">
+  <link rel="canonical" href="https://football-rules-explained.web.app/cards-and-fouls-in-football.html">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pitch: #1a472a;
+      --pitch-mid: #2d6a42;
+      --accent: #f0c040;
+      --accent-soft: #fdf3d0;
+      --paper: #faf8f4;
+      --ink: #1c1c1a;
+      --muted: #6b6860;
+      --border: #e2ddd6;
+      --white: #ffffff;
+      --yellow-card: #f1c40f;
+      --red-card: #e74c3c;
+      --card-yellow-bg: #fffde7;
+      --card-red-bg: #ffebee;
+    }
+    body { font-family: 'Lora', serif; background: var(--paper); color: var(--ink); line-height: 1.7; }
+
+    nav { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; overflow-x: auto; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 0; min-width: max-content; }
+    nav ul li a { display: block; padding: 0.85rem 1.2rem; color: #333; text-decoration: none; font-size: 0.9rem; font-weight: 600; border-bottom: 3px solid transparent; transition: border-color 0.2s, color 0.2s; white-space: nowrap; }
+    nav ul li a:hover { color: var(--pitch-mid); border-bottom-color: var(--pitch-mid); }
+    nav ul li a.nav-cluster { color: var(--pitch); border-left: 1px solid var(--border); }
+    nav ul li a.nav-cluster:hover { background: #f0f7f2; border-bottom-color: var(--pitch-mid); }
+    nav ul li a.nav-active { color: var(--pitch); border-bottom-color: var(--pitch); font-weight: 700; }
+    .nav-divider { display: flex; align-items: center; padding: 0 0.5rem; color: #ccc; font-size: 1rem; pointer-events: none; }
+
+    .hero {
+      background: var(--ink);
+      padding: 4rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 40%, rgba(231,76,60,0.12) 100%);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 40px;
+      background: var(--paper);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+    .breadcrumb { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1rem; }
+    .breadcrumb a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .topic-tag { display: inline-block; background: var(--red-card); color: var(--white); font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 3px 12px; border-radius: 2px; margin-bottom: 1rem; }
+    h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; color: var(--white); line-height: 1.05; letter-spacing: 1px; margin-bottom: 1rem; }
+    .hero-sub { color: rgba(255,255,255,0.6); font-size: 1rem; font-style: italic; max-width: 560px; }
+
+    .main { max-width: 780px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+
+    .quick-answer { background: var(--accent-soft); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1.4rem 1.6rem; margin-bottom: 2.8rem; }
+    .quick-answer strong { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--pitch-mid); display: block; margin-bottom: 0.5rem; }
+    .quick-answer p { font-size: 1rem; color: var(--ink); line-height: 1.65; }
+
+    h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; font-weight: 700; letter-spacing: 1px; color: var(--ink); margin: 2.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 2px solid var(--border); }
+    h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.5px; color: var(--pitch-mid); margin: 1.8rem 0 0.5rem; }
+    p { margin-bottom: 1rem; font-size: 1rem; }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; font-size: 0.97rem; }
+
+    /* CARD DISPLAY */
+    .card-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+    @media (max-width: 560px) { .card-showcase { grid-template-columns: 1fr; } }
+    .card-panel { border-radius: 10px; padding: 1.6rem; border: 2px solid; }
+    .card-panel.yellow { background: var(--card-yellow-bg); border-color: var(--yellow-card); }
+    .card-panel.red { background: var(--card-red-bg); border-color: var(--red-card); }
+    .card-visual {
+      width: 36px; height: 52px;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      box-shadow: 2px 3px 8px rgba(0,0,0,0.2);
+    }
+    .card-panel.yellow .card-visual { background: var(--yellow-card); }
+    .card-panel.red .card-visual { background: var(--red-card); }
+    .card-panel h3 { margin-top: 0; font-size: 1.1rem; }
+    .card-panel.yellow h3 { color: #856404; }
+    .card-panel.red h3 { color: #9b2335; }
+    .card-panel ul { font-size: 0.88rem; color: var(--ink); }
+
+    /* OFFENCE TABLE */
+    .offence-list { margin: 1.5rem 0; }
+    .offence-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .offence-item:last-child { border-bottom: none; }
+    .offence-badge {
+      flex-shrink: 0;
+      width: 28px; height: 38px;
+      border-radius: 3px;
+      box-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+    }
+    .offence-badge.y { background: var(--yellow-card); }
+    .offence-badge.r { background: var(--red-card); }
+    .offence-text strong { font-size: 0.95rem; display: block; margin-bottom: 0.2rem; }
+    .offence-text span { font-size: 0.85rem; color: var(--muted); }
+
+    /* HANDBALL BOX */
+    .rule-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    @media (max-width: 560px) { .rule-split { grid-template-columns: 1fr; } }
+    .rule-box { border-radius: 8px; padding: 1.2rem 1.4rem; border: 1.5px solid; }
+    .rule-box.foul { background: #fff5f5; border-color: #f5c6c6; }
+    .rule-box.ok { background: #f0fff4; border-color: #b2dfdb; }
+    .rule-box-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 0.5rem; }
+    .rule-box.foul .rule-box-label { color: var(--red-card); }
+    .rule-box.ok .rule-box-label { color: #27ae60; }
+    .rule-box p { font-size: 0.88rem; margin: 0; }
+
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.2rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-q::after { content: '+'; font-size: 1.3rem; color: var(--pitch-mid); flex-shrink: 0; transition: transform .2s; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { display: none; padding-top: 0.8rem; font-size: 0.95rem; color: var(--muted); }
+    .faq-item.open .faq-a { display: block; }
+
+    /* CTA */
+    .cta-box { background: var(--pitch); border-radius: 12px; padding: 2.4rem; text-align: center; margin: 3rem 0; }
+    .cta-box h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; color: var(--white); margin-bottom: 0.6rem; margin-top: 0; }
+    .cta-box p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 1.4rem; font-style: italic; }
+    .cta-btn { display: inline-block; background: var(--accent); color: var(--pitch); font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: opacity .2s, transform .2s; }
+    .cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+    .cta-btn-ghost { display: inline-block; border: 1.5px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; margin-left: 1rem; transition: border-color .2s, color .2s; }
+    .cta-btn-ghost:hover { border-color: rgba(255,255,255,0.7); color: var(--white); }
+
+    .related { margin-top: 3rem; }
+    .related h2 { font-size: 1.3rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .related-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 8px; padding: 1.2rem 1.4rem; text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; display: block; }
+    .related-card:hover { border-color: var(--pitch-mid); transform: translateY(-3px); }
+    .related-card-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--pitch-mid); margin-bottom: 0.4rem; }
+    .related-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; color: var(--ink); margin-bottom: 0.3rem; }
+    .related-card p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+
+    footer { background: #1a1a2e; color: #ccc; padding: 2rem 1rem; text-align: center; font-size: 0.88rem; }
+    footer a { color: #8bc34a; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+
+<nav aria-label="Page sections">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="nav-divider">|</li>
+    <li><a href="offside-rule-explained.html" class="nav-cluster">Offside Rule</a></li>
+    <li><a href="cards-and-fouls-in-football.html" class="nav-cluster nav-active">Cards &amp; Fouls</a></li>
+    <li><a href="football-set-pieces-explained.html" class="nav-cluster">Set Pieces</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Cards & Fouls</div>
+    <div class="topic-tag">Cards & Fouls</div>
+    <h1>Yellow Cards, Red Cards & Fouls in Football Explained</h1>
+    <p class="hero-sub">What earns a booking, when is a player sent off, and what exactly counts as a handball foul — all clearly explained.</p>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="quick-answer">
+    <strong>Quick Answer</strong>
+    <p>A <strong>yellow card</strong> is a caution for unsporting behaviour — two yellows equal a red. A <strong>red card</strong> means immediate dismissal and the team plays the rest of the match with ten players. A <strong>handball</strong> is only a foul when deliberate, or when it leads directly to a goal or scoring chance.</p>
+  </div>
+
+  <h2>Yellow Card vs Red Card: The Key Difference</h2>
+  <p>Both cards are tools the referee uses to manage player behaviour — but they carry very different consequences. Here's how they compare side by side:</p>
+
+  <div class="card-showcase">
+    <div class="card-panel yellow">
+      <div class="card-visual"></div>
+      <h3>Yellow Card — Caution</h3>
+      <p style="font-size:.88rem; margin-bottom:.8rem; color:#6b5a00;">A formal warning. The player stays on the pitch but is now one caution away from dismissal.</p>
+      <ul>
+        <li>Persistent infringement of rules</li>
+        <li>Dissent (arguing with the referee)</li>
+        <li>Unsporting behaviour</li>
+        <li>Time-wasting or delaying restarts</li>
+        <li>Entering/leaving field without permission</li>
+        <li>Two yellows = automatic red card</li>
+      </ul>
+    </div>
+    <div class="card-panel red">
+      <div class="card-visual"></div>
+      <h3>Red Card — Dismissal</h3>
+      <p style="font-size:.88rem; margin-bottom:.8rem; color:#7a1c1c;">Immediate ejection. The team cannot replace the player — they continue with 10 men.</p>
+      <ul>
+        <li>Serious foul play (endangering safety)</li>
+        <li>Violent conduct</li>
+        <li>Denying a clear goal-scoring opportunity (DOGSO)</li>
+        <li>Offensive, insulting, or abusive language</li>
+        <li>Spitting at anyone</li>
+        <li>Second yellow card in the same match</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>What Happens After a Red Card?</h2>
+  <p>When a player receives a red card, they must leave the pitch and its surroundings immediately. Their team continues the match with <strong>one fewer player</strong> — ten outfield players plus the goalkeeper, or fewer if additional red cards follow.</p>
+  <p>The dismissed player is also <strong>suspended</strong> for a minimum of one subsequent match, though the exact suspension length depends on the competition rules and the nature of the offence. In professional football, violent conduct red cards typically carry a three-match ban.</p>
+  <p>Unlike many other sports, football does not allow the dismissed player to be replaced — so a red card is a major tactical and numerical disadvantage for the rest of the match.</p>
+
+  <h2>Sending-Off Offences in Detail</h2>
+  <div class="offence-list">
+    <div class="offence-item">
+      <div class="offence-badge r"></div>
+      <div class="offence-text">
+        <strong>Denying a Goal or Goal-Scoring Opportunity (DOGSO)</strong>
+        <span>A defender handles the ball to prevent a certain goal, or commits a foul that stops an attacker who had a clear run on goal. Applies inside AND outside the penalty area. If the foul occurs inside the area and a penalty is given, the card may be reduced to yellow depending on whether the defender made a genuine attempt to play the ball.</span>
+      </div>
+    </div>
+    <div class="offence-item">
+      <div class="offence-badge r"></div>
+      <div class="offence-text">
+        <strong>Serious Foul Play</strong>
+        <span>A tackle that uses excessive force or endangers an opponent's safety — such as a studs-up lunge at knee height. Intent is not required; the level of danger determines the card.</span>
+      </div>
+    </div>
+    <div class="offence-item">
+      <div class="offence-badge r"></div>
+      <div class="offence-text">
+        <strong>Violent Conduct</strong>
+        <span>Striking, biting, or spitting at another person. Can occur anywhere — on or off the pitch, during or after the match. Does not require the ball to be in play.</span>
+      </div>
+    </div>
+    <div class="offence-item">
+      <div class="offence-badge y"></div>
+      <div class="offence-text">
+        <strong>Deliberate Time-Wasting</strong>
+        <span>Holding onto the ball unnecessarily after play has stopped, kicking the ball away, or excessive delays during throw-ins and free kicks. Increasingly penalised at the top level.</span>
+      </div>
+    </div>
+    <div class="offence-item">
+      <div class="offence-badge y"></div>
+      <div class="offence-text">
+        <strong>Simulation (Diving)</strong>
+        <span>A player deliberately falls or exaggerates contact to deceive the referee into awarding a free kick or penalty. Yellow card offence — classed as unsporting behaviour.</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>The Handball Rule Explained</h2>
+  <p>Handball is one of the most controversial and frequently misunderstood rules in modern football. The key principle is <em>deliberateness</em> — but recent rule changes have made accidental handball a foul in certain situations too.</p>
+
+  <h3>When Handball Is a Foul</h3>
+  <div class="rule-split">
+    <div class="rule-box foul">
+      <div class="rule-box-label">⛔ Handball Foul</div>
+      <p>A player <strong>deliberately</strong> handles the ball. The hand or arm is in an unnatural position — raised away from the body, used to block a shot, or used to control the ball intentionally.</p>
+    </div>
+    <div class="rule-box foul">
+      <div class="rule-box-label">⛔ Also a Foul</div>
+      <p>An <strong>accidental</strong> handball that immediately leads to a goal or a clear goal-scoring opportunity — even if unintentional. Introduced in 2019.</p>
+    </div>
+    <div class="rule-box ok">
+      <div class="rule-box-label">✅ Not a Foul</div>
+      <p>The ball strikes a player's hand or arm that is in a <strong>natural position</strong> close to the body, and it does not lead to a goal or scoring chance.</p>
+    </div>
+    <div class="rule-box ok">
+      <div class="rule-box-label">✅ Not a Foul</div>
+      <p>A player accidentally handles the ball <strong>directly from their own teammate's deliberate kick</strong> — provided no clear goal-scoring opportunity follows.</p>
+    </div>
+  </div>
+
+  <h3>Handball in the Penalty Area</h3>
+  <p>If a defending player commits a handball offence inside their own penalty area, the attacking team is awarded a <strong>penalty kick</strong>. This applies whether the handball is deliberate or accidental (provided it meets the criteria above). A goal scored by the attacking team immediately after an attacker's handball is disallowed.</p>
+
+  <h2>When Is a Penalty Kick Awarded?</h2>
+  <p>A penalty kick is awarded when a player commits a <strong>direct free kick offence</strong> inside their own penalty area. Direct free kick offences include:</p>
+  <ul>
+    <li>Kicking, tripping, pushing, or striking an opponent</li>
+    <li>A tackle that makes contact with the player before the ball</li>
+    <li>Handball (as defined above)</li>
+    <li>Jumping at, charging, or holding an opponent</li>
+  </ul>
+  <p>The penalty is taken from the penalty spot (11 metres from goal) with only the goalkeeper able to defend. All other players must remain outside the penalty area and arc until the ball is kicked.</p>
+
+  <div class="cta-box">
+    <h3>Practice Reading Cards & Fouls</h3>
+    <p>Our interactive app includes real football scenarios — was it a yellow, red, or no card?</p>
+    <a href="https://github.com/zlatazivanovic/football-rules-explained-interactively" class="cta-btn" target="_blank" rel="noopener">Try the Interactive App</a>
+    <a href="index.html" class="cta-btn-ghost">Back to All Rules</a>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does a red card carry over to the next match?</div>
+    <div class="faq-a">Yes. A player who receives a red card is automatically suspended for at least the next competitive match in the same competition. The suspension length depends on the type of offence and competition regulations — violent conduct typically carries a three-match ban.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can a goalkeeper receive a yellow or red card?</div>
+    <div class="faq-a">Yes, goalkeepers can receive both yellow and red cards. If a goalkeeper is sent off, a substitute goalkeeper can come on — but the team must remove an outfield player first if all substitutions have been used. An outfield player can take the goalkeeper's position.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the "professional foul"?</div>
+    <div class="faq-a">A "professional foul" is a deliberate foul — usually a trip or hold — committed to stop a player who has a clear path to goal. If it denies a clear goal-scoring opportunity (DOGSO), it typically results in a red card. However, inside the penalty area, if the player was genuinely going for the ball, the card may be reduced to yellow since a penalty is also awarded.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can a manager or coach receive a red card?</div>
+    <div class="faq-a">Yes. Managers, coaches, and other technical staff can be shown yellow or red cards. If sent off, they must leave the technical area and cannot give instructions to the team for the remainder of the match.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is handball always a penalty if it happens in the box?</div>
+    <div class="faq-a">Not always. The handball must meet the criteria for a foul — it must be deliberate, or the hand/arm must be in an unnatural position, or it must directly create a goal or scoring opportunity. An accidental handball with the arm tucked close to the body, which doesn't affect play, is generally not penalised.</div>
+  </div>
+
+  <nav class="related" aria-label="Related pages">
+    <h2>Continue Learning</h2>
+    <div class="related-grid">
+      <a href="offside-rule-explained.html" class="related-card">
+        <div class="related-card-tag">Offside</div>
+        <h4>The Offside Rule Explained</h4>
+        <p>Position, active play, and the VAR millimetre debate.</p>
+      </a>
+      <a href="football-set-pieces-explained.html" class="related-card">
+        <div class="related-card-tag">Set Pieces</div>
+        <h4>Throw-ins, Corner Kicks & Penalties</h4>
+        <p>Rules around restarts and surprising edge cases.</p>
+      </a>
+      <a href="index.html" class="related-card">
+        <div class="related-card-tag">Pillar Page</div>
+        <h4>Football Rules Explained Interactively</h4>
+        <p>The complete hub — PDF guide, GitHub repo, and all resources.</p>
+      </a>
+    </div>
+  </nav>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="https://archive.org/details/rr_20260326" target="_blank" rel="noopener">PDF Guide</a>
+    <a href="https://medium.com/@zlata_zivanovic/how-to-learn-football-rules-interactively-with-this-open-source-project-6a28d740b22c" target="_blank" rel="noopener">Medium Article</a>
+    <a href="https://github.com/zlatazivanovic/football-rules-explained-interactively" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.theifab.com/laws-of-the-game/" target="_blank" rel="noopener noreferrer">IFAB Official Laws</a>
+    <a href="offside-rule-explained.html">Offside Rule</a>
+    <a href="cards-and-fouls-in-football.html">Cards &amp; Fouls</a>
+    <a href="football-set-pieces-explained.html">Set Pieces</a>
+    <a href="sitemap.xml">Sitemap</a>
+  </div>
+  <p>&copy; 2026 Interactive Football Resources by <a href="https://medium.com/@zlata_zivanovic" target="_blank" rel="noopener">Zlata Zivanovic</a>. Content based on IFAB Laws of the Game. For educational purposes.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  });
+</script>
+</body>
+</html>
