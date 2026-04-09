@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offside Rule Explained – Football Rules Explained Interactively</title>
+  <meta name="description" content="The offside rule in football explained clearly. Learn what offside means, when it applies, active play exceptions, and see visual examples. Part of the Football Rules Interactive guide.">
+  <meta name="keywords" content="offside rule explained, what is offside in football, offside rule football, soccer offside rule, offside position">
+  <link rel="canonical" href="https://football-rules-explained.web.app/offside-rule-explained.html">
+  <link rel="alternate" type="application/rss+xml" title="Interactive Football Resources" href="https://your-github-page/football-feed.xml">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pitch: #1a472a;
+      --pitch-mid: #2d6a42;
+      --accent: #f0c040;
+      --accent-soft: #fdf3d0;
+      --paper: #faf8f4;
+      --ink: #1c1c1a;
+      --muted: #6b6860;
+      --border: #e2ddd6;
+      --white: #ffffff;
+      --danger: #c0392b;
+      --safe: #27ae60;
+    }
+    body { font-family: 'Lora', serif; background: var(--paper); color: var(--ink); line-height: 1.7; }
+
+    /* NAV */
+    nav { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; overflow-x: auto; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 0; min-width: max-content; }
+    nav ul li a { display: block; padding: 0.85rem 1.2rem; color: #333; text-decoration: none; font-size: 0.9rem; font-weight: 600; border-bottom: 3px solid transparent; transition: border-color 0.2s, color 0.2s; white-space: nowrap; }
+    nav ul li a:hover { color: var(--pitch-mid); border-bottom-color: var(--pitch-mid); }
+    nav ul li a.nav-cluster { color: var(--pitch); border-left: 1px solid var(--border); }
+    nav ul li a.nav-cluster:hover { background: #f0f7f2; border-bottom-color: var(--pitch-mid); }
+    nav ul li a.nav-active { color: var(--pitch); border-bottom-color: var(--pitch); font-weight: 700; }
+    .nav-divider { display: flex; align-items: center; padding: 0 0.5rem; color: #ccc; font-size: 1rem; pointer-events: none; }
+
+    /* HERO */
+    .hero {
+      background: var(--pitch);
+      padding: 4rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 40px;
+      background: var(--paper);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .breadcrumb { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 1rem; }
+    .breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .topic-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--pitch);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 3px 12px;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.05;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    .hero-sub { color: rgba(255,255,255,0.7); font-size: 1rem; font-style: italic; max-width: 560px; }
+
+    /* MAIN */
+    .main { max-width: 780px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+
+    /* QUICK ANSWER BOX */
+    .quick-answer {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 2.8rem;
+    }
+    .quick-answer strong { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--pitch-mid); display: block; margin-bottom: 0.5rem; }
+    .quick-answer p { font-size: 1rem; color: var(--ink); line-height: 1.65; }
+
+    /* HEADINGS */
+    h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; font-weight: 700; letter-spacing: 1px; color: var(--ink); margin: 2.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 2px solid var(--border); }
+    h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.5px; color: var(--pitch-mid); margin: 1.8rem 0 0.5rem; }
+    p { margin-bottom: 1rem; font-size: 1rem; }
+
+    /* VISUAL PITCH DIAGRAM */
+    .pitch-diagram { background: var(--pitch-mid); border-radius: 12px; padding: 2rem; margin: 2rem 0; position: relative; overflow: hidden; }
+    .pitch-diagram h3 { color: rgba(255,255,255,0.9); margin-top: 0; margin-bottom: 1.2rem; font-size: 1rem; letter-spacing: 1px; }
+    .pitch-svg-wrap { background: #2a8a4a; border-radius: 8px; overflow: hidden; padding: 1rem; }
+
+    /* TWO-COLUMN SCENARIOS */
+    .scenarios { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    @media (max-width: 600px) { .scenarios { grid-template-columns: 1fr; } }
+    .scenario {
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+      border: 1.5px solid;
+    }
+    .scenario.offside { background: #fff5f5; border-color: #f5c6c6; }
+    .scenario.onside  { background: #f0fff4; border-color: #b2dfdb; }
+    .scenario-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .scenario.offside .scenario-label { color: var(--danger); }
+    .scenario.onside  .scenario-label { color: var(--safe); }
+    .scenario p { font-size: 0.9rem; margin: 0; }
+
+    /* RULE CARDS */
+    .rule-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .rule-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .rule-card:hover { border-color: var(--pitch-mid); box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+    .rule-card-num { font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.4rem; }
+    .rule-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; letter-spacing: 0.5px; color: var(--ink); margin-bottom: 0.4rem; }
+    .rule-card p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.2rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-q::after { content: '+'; font-size: 1.3rem; color: var(--pitch-mid); flex-shrink: 0; transition: transform .2s; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { display: none; padding-top: 0.8rem; font-size: 0.95rem; color: var(--muted); }
+    .faq-item.open .faq-a { display: block; }
+
+    /* CTA BOX */
+    .cta-box {
+      background: var(--pitch);
+      border-radius: 12px;
+      padding: 2.4rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .cta-box h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; color: var(--white); margin-bottom: 0.6rem; margin-top: 0; border: none; }
+    .cta-box p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 1.4rem; font-style: italic; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--pitch);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity .2s, transform .2s;
+    }
+    .cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+    .cta-btn-ghost {
+      display: inline-block;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.8);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-left: 1rem;
+      transition: border-color .2s, color .2s;
+    }
+    .cta-btn-ghost:hover { border-color: rgba(255,255,255,0.7); color: var(--white); }
+
+    /* RELATED PAGES */
+    .related { margin-top: 3rem; }
+    .related h2 { font-size: 1.3rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .related-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .2s, transform .2s;
+      display: block;
+    }
+    .related-card:hover { border-color: var(--pitch-mid); transform: translateY(-3px); }
+    .related-card-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--pitch-mid); margin-bottom: 0.4rem; }
+    .related-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; color: var(--ink); margin-bottom: 0.3rem; }
+    .related-card p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+
+    /* FOOTER */
+    footer { background: #1a1a2e; color: #ccc; padding: 2rem 1rem; text-align: center; font-size: 0.88rem; }
+    footer a { color: #8bc34a; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+
+    @media (max-width: 640px) {
+      .main { padding: 2rem 1.2rem 4rem; }
+      .cta-btn-ghost { margin-left: 0; margin-top: 0.8rem; display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<nav aria-label="Page sections">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="nav-divider">|</li>
+    <li><a href="offside-rule-explained.html" class="nav-cluster nav-active">Offside Rule</a></li>
+    <li><a href="cards-and-fouls-in-football.html" class="nav-cluster">Cards &amp; Fouls</a></li>
+    <li><a href="football-set-pieces-explained.html" class="nav-cluster">Set Pieces</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Offside Rule</div>
+    <div class="topic-tag">Offside Rule</div>
+    <h1>The Offside Rule in Football, Explained Clearly</h1>
+    <p class="hero-sub">One of football's most debated rules — what it really means, when it applies, and the exceptions that trip everyone up.</p>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="quick-answer">
+    <strong>Quick Answer</strong>
+    <p>A player is offside if they are nearer to the opponent's goal line than both the ball and the second-last defender when the ball is played to them — <em>and</em> they actively participate in play. Simply being in an offside position is not an offence by itself.</p>
+  </div>
+
+  <h2>What Is the Offside Rule?</h2>
+  <p>The offside rule is Law 11 of the <em>Laws of the Game</em> as defined by IFAB (the International Football Association Board). Its purpose is to prevent players from simply camping near the opponent's goal waiting for long passes — it forces teams to build attacks with movement and timing.</p>
+  <p>At its core, the rule has two conditions that must <em>both</em> be true for an offside offence to occur:</p>
+
+  <div class="rule-cards">
+    <div class="rule-card">
+      <div class="rule-card-num">01</div>
+      <h4>Offside Position</h4>
+      <p>The player is nearer to the opponent's goal line than both the ball and the second-last opponent (usually the last outfield defender).</p>
+    </div>
+    <div class="rule-card">
+      <div class="rule-card-num">02</div>
+      <h4>Active Involvement</h4>
+      <p>The player must be actively involved — interfering with play, interfering with an opponent, or gaining an advantage from the position.</p>
+    </div>
+    <div class="rule-card">
+      <div class="rule-card-num">03</div>
+      <h4>Moment of the Pass</h4>
+      <p>The position is judged at the <em>exact moment</em> the ball is played by a teammate, not when the player receives it.</p>
+    </div>
+  </div>
+
+  <h2>Visual: Offside vs. Onside</h2>
+  <div class="pitch-diagram">
+    <h3>⬇ Attacking direction</h3>
+    <div class="pitch-svg-wrap">
+      <svg viewBox="0 0 560 260" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <!-- Pitch markings -->
+        <rect x="0" y="0" width="560" height="260" fill="#2a8a4a"/>
+        <!-- Field lines -->
+        <rect x="10" y="10" width="540" height="240" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+        <!-- Centre line -->
+        <line x1="280" y1="10" x2="280" y2="250" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        <!-- Penalty area right -->
+        <rect x="420" y="75" width="130" height="110" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+        <!-- Goal right -->
+        <rect x="530" y="110" width="30" height="40" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+
+        <!-- Last defender line -->
+        <line x1="390" y1="10" x2="390" y2="250" stroke="#f0c040" stroke-width="2" stroke-dasharray="6 4"/>
+        <text x="394" y="22" fill="#f0c040" font-size="10" font-family="sans-serif">Last defender</text>
+
+        <!-- SCENARIO A: OFFSIDE -->
+        <!-- Defender -->
+        <circle cx="390" cy="130" r="11" fill="#3498db" stroke="white" stroke-width="1.5"/>
+        <text x="390" cy="130" fill="white" font-size="9" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">DEF</text>
+        <!-- Attacker OFFSIDE -->
+        <circle cx="440" cy="90" r="11" fill="#e74c3c" stroke="white" stroke-width="2"/>
+        <text x="440" y="90" fill="white" font-size="8" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">ATT</text>
+        <text x="440" y="73" fill="#e74c3c" font-size="9" font-weight="bold" text-anchor="middle" font-family="sans-serif">OFFSIDE</text>
+
+        <!-- SCENARIO B: ONSIDE -->
+        <!-- Attacker ONSIDE -->
+        <circle cx="355" cy="175" r="11" fill="#27ae60" stroke="white" stroke-width="2"/>
+        <text x="355" y="175" fill="white" font-size="8" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">ATT</text>
+        <text x="355" y="158" fill="#27ae60" font-size="9" font-weight="bold" text-anchor="middle" font-family="sans-serif">ONSIDE</text>
+
+        <!-- Ball -->
+        <circle cx="200" cy="130" r="8" fill="white" stroke="#ccc" stroke-width="1"/>
+        <text x="200" y="148" fill="rgba(255,255,255,0.7)" font-size="8" text-anchor="middle" font-family="sans-serif">BALL</text>
+
+        <!-- Pass arrow -->
+        <line x1="208" y1="127" x2="428" y2="93" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arr)"/>
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 2L8 5L2 8" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/></marker></defs>
+
+        <!-- Goalkeeper -->
+        <circle cx="510" cy="130" r="11" fill="#9b59b6" stroke="white" stroke-width="1.5"/>
+        <text x="510" y="130" fill="white" font-size="8" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">GK</text>
+
+        <text x="20" y="250" fill="rgba(255,255,255,0.5)" font-size="9" font-family="sans-serif">Red = offside position · Green = onside · Yellow dashed = offside line</text>
+      </svg>
+    </div>
+  </div>
+
+  <h2>Common Offside Scenarios</h2>
+
+  <div class="scenarios">
+    <div class="scenario offside">
+      <div class="scenario-label">⛔ Offside</div>
+      <p>An attacker is ahead of the last defender when their teammate plays the ball forward. They run onto the pass and shoot. <strong>Offside — the flag goes up.</strong></p>
+    </div>
+    <div class="scenario onside">
+      <div class="scenario-label">✅ Onside</div>
+      <p>Same situation, but the attacker's shoulder is level with the last defender at the moment the ball is played. <strong>Onside — play continues.</strong></p>
+    </div>
+    <div class="scenario onside">
+      <div class="scenario-label">✅ Not Offside</div>
+      <p>A player is in an offside position but doesn't touch or chase the ball, and doesn't block the goalkeeper's view. <strong>No active involvement — play on.</strong></p>
+    </div>
+    <div class="scenario offside">
+      <div class="scenario-label">⛔ Offside (VAR)</div>
+      <p>An attacker appears onside to the assistant referee, scores a goal, but VAR review using freeze-frame shows their armpit was ahead of the defender. <strong>Goal disallowed.</strong></p>
+    </div>
+  </div>
+
+  <h2>What Counts as "Active Involvement"?</h2>
+  <p>This is where the rule gets nuanced. According to IFAB, a player in an offside position is only penalised if they are actively involved in one of three ways:</p>
+  <h3>1. Interfering with Play</h3>
+  <p>The player touches or plays the ball passed or touched by a teammate.</p>
+  <h3>2. Interfering with an Opponent</h3>
+  <p>The player prevents an opponent from playing the ball — for example, blocking the goalkeeper's line of sight or challenging for the ball.</p>
+  <h3>3. Gaining an Advantage</h3>
+  <p>The player gains an advantage from being in an offside position — for example, receiving a ball that rebounds off a post, crossbar, or even an opposing player, when they were originally offside.</p>
+
+  <h2>Exceptions: When Offside Does Not Apply</h2>
+  <p>The following situations cannot result in an offside offence, regardless of player position:</p>
+  <ul style="padding-left:1.4rem; margin-bottom:1rem;">
+    <li style="margin-bottom:.5rem;">Goal kicks</li>
+    <li style="margin-bottom:.5rem;">Throw-ins</li>
+    <li style="margin-bottom:.5rem;">Corner kicks</li>
+    <li>Receiving directly from any of the above restarts</li>
+  </ul>
+  <p>This is why teams sometimes score directly from a corner with an offside-looking header — if the ball was played directly from the corner flag, offside cannot be called.</p>
+
+  <h2>The Role of VAR in Offside Decisions</h2>
+  <p>Video Assistant Referee (VAR) technology has transformed how offsides are judged at the elite level. Controversial freeze-frame images — where a player's armpit, shoulder, or toe appears to be millimetres ahead of a defender — have sparked ongoing debate about whether this level of precision reflects the spirit of the rule.</p>
+  <p>As of 2025, IFAB has been reviewing proposals for a "daylight" standard, where only clear and obvious offside positions would be flagged, reducing the frequency of marginal calls. The debate continues.</p>
+
+  <div class="cta-box">
+    <h3>Test Your Offside Knowledge Interactively</h3>
+    <p>Our open-source app lets you explore real match scenarios — is it offside or not?</p>
+    <a href="https://github.com/zlatazivanovic/football-rules-explained-interactively" class="cta-btn" target="_blank" rel="noopener">Try the Interactive App</a>
+    <a href="index.html" class="cta-btn-ghost">Back to All Rules</a>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can you be offside in your own half?</div>
+    <div class="faq-a">No. A player can only be in an offside position in the opponent's half of the pitch. If you are in your own half at the moment the ball is played, you cannot be offside, regardless of where the opposing defenders are.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does the goalkeeper count as a defender for offside?</div>
+    <div class="faq-a">Yes. The goalkeeper counts as one of the defenders. The offside line is set by the second-last opponent, which is usually the last outfield defender. If the goalkeeper steps forward, they become the second-last opponent and the offside line shifts.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is a player offside if they receive a throw-in?</div>
+    <div class="faq-a">No. Offside cannot be called from a throw-in. A player can stand ahead of the last defender and receive a throw-in without any offside offence. This also applies to goal kicks and corner kicks.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What body parts count for the offside line?</div>
+    <div class="faq-a">Any part of the body that can legally score a goal counts — head, torso, arms (excluding hands), and legs. Hands and arms do not count, which is why you sometimes see VAR measure from a player's armpit or shoulder rather than their hand.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">If there are no defenders, is there still an offside line?</div>
+    <div class="faq-a">The offside line is always at least the goal line. If all defenders are behind the ball, the goal line acts as the offside boundary. You cannot be offside from a goal kick taken from the keeper's own goal area — the ball must leave the penalty area first before offside can apply.</div>
+  </div>
+
+  <nav class="related" aria-label="Related pages">
+    <h2>Continue Learning</h2>
+    <div class="related-grid">
+      <a href="cards-and-fouls-in-football.html" class="related-card">
+        <div class="related-card-tag">Cards & Fouls</div>
+        <h4>Yellow Cards, Red Cards & Handball Rules</h4>
+        <p>When does a foul become a card? What counts as handball?</p>
+      </a>
+      <a href="football-set-pieces-explained.html" class="related-card">
+        <div class="related-card-tag">Set Pieces</div>
+        <h4>Throw-ins, Corner Kicks & Penalties</h4>
+        <p>The rules around restarts — and some surprising edge cases.</p>
+      </a>
+      <a href="index.html" class="related-card">
+        <div class="related-card-tag">Pillar Page</div>
+        <h4>Football Rules Explained Interactively</h4>
+        <p>The complete hub with PDF guide, GitHub repo, and all resources.</p>
+      </a>
+    </div>
+  </nav>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="https://archive.org/details/rr_20260326" target="_blank" rel="noopener">PDF Guide</a>
+    <a href="https://medium.com/@zlata_zivanovic/how-to-learn-football-rules-interactively-with-this-open-source-project-6a28d740b22c" target="_blank" rel="noopener">Medium Article</a>
+    <a href="https://github.com/zlatazivanovic/football-rules-explained-interactively" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.theifab.com/laws-of-the-game/" target="_blank" rel="noopener noreferrer">IFAB Official Laws</a>
+    <a href="offside-rule-explained.html">Offside Rule</a>
+    <a href="cards-and-fouls-in-football.html">Cards &amp; Fouls</a>
+    <a href="football-set-pieces-explained.html">Set Pieces</a>
+    <a href="sitemap.xml">Sitemap</a>
+  </div>
+  <p>&copy; 2026 Interactive Football Resources by <a href="https://medium.com/@zlata_zivanovic" target="_blank" rel="noopener">Zlata Zivanovic</a>. Content based on IFAB Laws of the Game. For educational purposes.</p>
+</footer>
+
+</body>
+</html>
